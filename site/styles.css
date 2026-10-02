@@ -1,0 +1,500 @@
+:root {
+  /*
+   * SITE COLOURS
+   * Change the values in this block to recolour the whole site.
+   */
+  --primary: #2f114f;        /* headings and code blocks */
+  --primary-middle: #4b087f; /* middle of the home-page gradient */
+  --primary-end: #6d02e4;    /* college purple; end of the gradient */
+  --accent: #6d02e4;         /* buttons, labels, and links */
+  --accent-hover: #5300ad;   /* buttons and links on hover */
+  --accent-bright: #d6b8ff;  /* braces and small hero highlights */
+
+  --text: #132238;
+  --text-soft: #463a53;
+  --background: #f8f6fc;
+  --card: #ffffff;
+  --border: #e5dcef;
+  --highlight: #eee5ff;
+  --navigation-text: #493b57;
+  --hero-text: #f2eaff;
+  --code-text: #f6f0ff;
+  --shadow: 0 12px 35px rgba(47, 17, 79, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--background);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: inherit; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.97);
+  color: var(--primary);
+}
+
+.nav {
+  width: min(1180px, calc(100% - 32px));
+  min-height: 58px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  color: var(--primary);
+  font-size: 1.12rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-identity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.identity-divider {
+  width: 1px;
+  height: 34px;
+  background: var(--border);
+}
+
+.college-logo {
+  display: flex;
+  align-items: center;
+}
+
+.college-logo img {
+  display: block;
+  width: 62px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.navlinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.navlinks a {
+  padding: 8px 11px;
+  border-radius: 7px;
+  color: var(--navigation-text);
+  font-size: 0.94rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navlinks a:hover,
+.navlinks a:focus-visible,
+.navlinks a.active {
+  background: var(--highlight);
+  color: var(--primary);
+}
+
+.hero {
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  background: linear-gradient(180deg, var(--card) 0%, var(--background) 100%);
+}
+
+.hero-inner {
+  width: min(1100px, calc(100% - 32px));
+  margin: auto;
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 50px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 { line-height: 1.18; }
+
+h1 {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(1.9rem, 3.7vw, 2.7rem);
+  letter-spacing: -0.055em;
+}
+
+.hero h1 { color: var(--primary); }
+
+.hero p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 16px 0 0;
+  color: var(--text-soft);
+  font-size: 1.03rem;
+  font-weight: 500;
+}
+
+.code-mark {
+  width: auto;
+  min-height: 0;
+  justify-self: end;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--accent);
+  font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+}
+
+.code-mark span { color: var(--primary-middle); }
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero .actions { margin-top: 22px; }
+
+.hero .button {
+  min-height: 40px;
+  padding: 8px 15px;
+  font-size: 0.92rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 17px;
+  border: 1px solid var(--accent);
+  border-radius: 9px;
+  background: var(--accent);
+  color: white;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.button.secondary {
+  border-color: var(--border);
+  background: var(--card);
+  color: var(--text);
+}
+
+.hero .button.secondary {
+  border-color: var(--border);
+  background: var(--card);
+  color: var(--primary);
+}
+
+main,
+.page-head,
+.footer-inner {
+  width: min(1100px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+main { padding: 48px 0 72px; }
+
+.home-main { padding: 25px 0 28px; }
+
+.home-main .section + .section { margin-top: 28px; }
+
+.home-main .section-head { margin-bottom: 13px; }
+
+.home-main .section-head h2 {
+  font-size: 1.42rem;
+}
+
+.page-head { padding: 46px 0 4px; }
+
+.page-head h1 {
+  color: var(--primary);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.page-head p {
+  max-width: 720px;
+  color: var(--text-soft);
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+
+.section + .section { margin-top: 62px; }
+
+.section-head {
+  margin-bottom: 22px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.section-head h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  letter-spacing: -0.025em;
+}
+
+.section-head p { margin: 0; color: var(--text-soft); font-weight: 500; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.course-areas {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.course-areas .card {
+  min-height: 168px;
+  padding: 20px 21px;
+}
+
+.course-areas .card h3 {
+  margin-top: 8px;
+  font-size: 1.08rem;
+}
+
+.course-areas .card p {
+  margin-bottom: 10px;
+  font-size: 0.94rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.card-number {
+  color: var(--accent);
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card h2,
+.card h3 { margin: 9px 0 8px; color: var(--primary); }
+
+.card h3 { font-size: 1.15rem; }
+
+.card p { margin: 0 0 17px; color: var(--text-soft); font-weight: 500; }
+
+.card-links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.card-links a {
+  color: var(--accent-hover);
+  font-size: 0.91rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.card-links a:hover,
+.card-links a:focus-visible { text-decoration: underline; }
+
+.card-links a + a::before {
+  content: "·";
+  margin-right: 8px;
+  color: #9aabb9;
+}
+
+.steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: var(--border);
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border: 5px solid var(--background);
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.home-main .step-number {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  border-width: 4px;
+  font-size: 0.78rem;
+}
+
+.home-main .steps::before { top: 15px; }
+
+.home-main .step strong {
+  margin-bottom: 2px;
+  font-size: 1rem;
+}
+
+.home-main .step div > span {
+  font-size: 0.89rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.step strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--primary);
+  font-size: 1.08rem;
+}
+
+.step div > span {
+  color: var(--text-soft);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.callout {
+  padding: 25px 28px;
+  border-left: 5px solid var(--accent);
+  border-radius: 4px 14px 14px 4px;
+  background: var(--highlight);
+}
+
+.callout h2, .callout h3 { margin-top: 0; color: var(--primary); }
+.callout p:last-child { margin-bottom: 0; }
+
+pre {
+  overflow-x: auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--primary);
+  color: var(--code-text);
+  font-size: 0.92rem;
+}
+
+code { font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace; }
+
+footer {
+  border-top: 1px solid var(--border);
+  background: white;
+  color: var(--text-soft);
+}
+
+.footer-inner {
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+footer a { color: var(--accent-hover); }
+
+@media (max-width: 850px) {
+  .hero-inner { grid-template-columns: 1fr; padding-top: 36px; }
+  .code-mark { display: none; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
+  .steps::before { display: none; }
+  .step {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 13px;
+    align-items: start;
+    text-align: left;
+  }
+  .step-number { margin: 0; border: 0; }
+}
+
+@media (max-width: 620px) {
+  .nav { padding: 12px 0; align-items: flex-start; }
+  .site-identity { gap: 9px; }
+  .identity-divider { height: 28px; }
+  .college-logo img { width: 50px; height: 25px; }
+  .navlinks { gap: 2px; }
+  .navlinks a { padding: 5px 7px; font-size: 0.82rem; }
+  .grid, .grid.two, .steps { grid-template-columns: 1fr; }
+  .hero-inner { padding: 32px 0; }
+  main { padding-top: 38px; }
+  .section-head, .footer-inner { align-items: flex-start; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}
