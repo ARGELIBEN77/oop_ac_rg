@@ -22,3 +22,7 @@ After completing this unit, you should be able to:
 ## Related project
 
 [Inheritance and Polymorphism Media Library](../../Inheritance_Polymorphism_Media_Library/README.md)
+
+## Practice
+
+[Unit exercises](EXERCISES.md)

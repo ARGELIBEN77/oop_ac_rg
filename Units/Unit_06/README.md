@@ -22,3 +22,7 @@ After completing this unit, you should be able to:
 ## Related project
 
 [Playlist — Rule of Three and Operators](../../Playlist_Rule_of_Three_and_Operators/README.md)
+
+## Practice
+
+[Unit exercises](EXERCISES.md)

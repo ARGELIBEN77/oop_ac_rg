@@ -27,3 +27,4 @@ After completing this unit, you should be able to:
 - [Guided project exercises](../../Smart_Pointers_Media_Ownership/EXERCISES.md)
 - [Custom smart-pointer implementation project](../../Musicians_and_Instruments_Smart_Pointers/README.md)
 - [Musicians and Instruments exercises](../../Musicians_and_Instruments_Smart_Pointers/EXERCISES.md)
+- [Unit exercises](EXERCISES.md)

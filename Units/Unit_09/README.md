@@ -22,3 +22,7 @@ After completing this unit, you should be able to:
 ## Related project
 
 [Exception Handling — Music Store](../../Exception_Handling_Music_Store/README.md)
+
+## Practice
+
+[Unit exercises](EXERCISES.md)

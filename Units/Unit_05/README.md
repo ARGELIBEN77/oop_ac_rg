@@ -22,3 +22,7 @@ After completing this unit, you should be able to:
 ## Related project
 
 [Product Catalog and Shopping Cart](../../Product_Catalog_and_Shopping_Cart/README.md)
+
+## Practice
+
+[Unit exercises](EXERCISES.md)

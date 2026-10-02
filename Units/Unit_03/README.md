@@ -21,3 +21,7 @@ After completing this unit, you should be able to:
 ## Related project
 
 [Song Class Fundamentals](../../Song_Class_Fundamentals/README.md)
+
+## Practice
+
+[Unit exercises](EXERCISES.md)

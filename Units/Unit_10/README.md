@@ -23,3 +23,7 @@ After completing this unit, you should be able to:
 
 - [Generic Sorted Catalog](../../Generic_Sorted_Catalog_Project/README.md)
 - [Generic Favorites Linked List](../../Generic_Favorites_Linked_List/README.md)
+
+## Practice
+
+[Unit exercises](EXERCISES.md)
