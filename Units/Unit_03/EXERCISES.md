@@ -1,41 +1,78 @@
-# Unit 3 — Constructors and Initializer Lists: Exercises
+# Unit 3 — Constructors: Exercises
 
-These exercises focus on establishing a valid object at the moment it is
-created. Show the selected constructor and resulting state when tracing. For
-implementation work, include declarations, initializer lists, validation, and
-client code that covers every constructor.
+These exercises focus on giving every object a meaningful initial state. Follow
+the lecture progression: assignments inside the constructor body and `this`
+are sufficient. Member initializer lists and delegating constructors are not
+required in this unit.
 
-## 1. Select a constructor
+## 1. Explain the need for a constructor
 
-Given default, one-argument, and two-argument constructors for `Point`, write
-five object declarations. For each declaration, identify the selected
-constructor and the resulting coordinates.
+Compare these two designs:
 
-## 2. Diagnose invalid construction
+- create an object and then call several setter functions;
+- provide the required values when the object is created.
 
-Explain what is wrong with constructing an object first and calling `init`
-later. Give one example of client code that can observe the object between
-those two steps.
+Discuss when the object begins to exist, when it becomes usable, and who is
+responsible for remembering every initialization step. Explain why a
+constructor improves the design.
 
-## 3. Implement valid construction
+## 2. Implement a default constructor
 
-Implement a `Course` class with a name, maximum number of students, and current
-enrolment. Provide a parameterized constructor and a delegating default
-constructor. Use initializer lists and reject impossible initial values.
+Add a default constructor to `Song`. Choose valid placeholder values for its
+title, artist, duration, and play count. Create an object without arguments and
+print its state.
 
-## 4. Initialization order
+Explain when the constructor runs automatically and why it is not called like
+an ordinary member function.
 
-Create two small member classes that print from their constructors. Place them
-inside a third class. Predict the construction order when the initializer list
-mentions the members in the reverse order, then verify your prediction.
+## 3. Overload constructors
 
-## 5. Optional extension
+Implement these three constructors:
 
-Add a `const` data member to `Course` and explain why assignment in the
-constructor body is not a valid replacement for initialization.
+```cpp
+Song();
+Song(std::string title);
+Song(std::string title, std::string artist, int duration);
+```
+
+Create one object with each constructor and record the resulting state. Explain
+how the compiler selects a constructor and why constructor overloading is
+clearer than several differently named initialization functions.
+
+## 4. Use `this` correctly
+
+Begin with this incorrect assignment inside a constructor:
+
+```cpp
+title = title;
+```
+
+Correct it with `this->title`. Explain which `title` is the parameter, which is
+the data member, and what `this` points to while the constructor is running.
+
+## 5. Validate construction arguments
+
+Extend the parameterized constructor so that:
+
+- a negative duration becomes `0`;
+- the play count begins at `0`.
+
+Test a positive duration, `0`, and a negative duration. Explain how validation
+during construction supports encapsulation and prevents an impossible state.
+
+## 6. Optional extension: forbid default construction
+
+Replace the default constructor with:
+
+```cpp
+Song() = delete;
+```
+
+Show the statement that now fails to compile. Explain when forbidding default
+construction is better than inventing placeholder values.
 
 ## Completion check
 
-You should be able to choose and implement constructors and explain why
-initializer lists are part of object construction rather than ordinary later
-assignment.
+You should be able to explain the purpose of constructors, implement default
+and parameterized constructors, use overloading and `this`, validate arguments,
+and decide whether default construction is appropriate.

@@ -1,47 +1,64 @@
-# Unit 1 — From Procedural Programming to OOP: Exercises
+# Unit 1 — Why Object-Oriented Programming?: Exercises
 
-These exercises practise the change from separate data and functions to
-objects that combine state and behavior. For written questions, give a short
-reason for every choice. For programming questions, submit the header,
-implementation, and a small `main` that demonstrates the required behavior.
-Complete the prediction work before running any code.
+This unit is conceptual. The goal is to understand why object-oriented
+programming is useful before learning C++ class syntax. Answer in your own
+words and support each answer with a concrete example.
 
-## 1. Identify state and behavior
+## 1. Programming and software engineering
 
-A music application stores a song title, artist, and duration. List the state
-that belongs inside a `Song` object and three operations that belong to the
-class. Explain why a function that prints the entire playlist does not belong
-to one `Song` object.
+Compare a short programming assignment with software that is developed by a
+team and maintained for several years. Discuss at least four of these aspects:
 
-## 2. Trace object use
+- program size;
+- number of developers;
+- maintenance;
+- testing;
+- changing requirements.
 
-Given a `Song` class with `play()` and `print()` member functions, write four
-statements that create two objects and call both operations. Mark the object,
-member function, and arguments in every call.
+Explain why producing correct output once is not enough for a long-lived
+software system.
 
-## 3. Convert a struct to a class
+## 2. Recognize pressure in a procedural design
 
-Convert this public structure into a class with private data and a small public
-interface. Put declarations in `Book.hpp`, implementations in `Book.cpp`, and
-demonstration code in `main.cpp`.
+Imagine a music application built from global arrays for song titles, artists,
+durations, and play counts, together with many separate functions.
 
-```cpp
-struct Book {
-    std::string title;
-    int pages;
-};
-```
+Identify three maintenance problems that could appear as the application grows.
+For each problem, explain how organizing the system around meaningful entities
+could make the design clearer. Do not write C++ classes yet.
 
-Your program must create two books and print their details without accessing
-data members directly.
+## 3. Model a problem domain
 
-## 4. Optional extension
+Consider an academic-college system. Identify four possible objects in the
+problem domain. For each object, write:
 
-Add a `readPages(int amount)` operation that records reading progress without
-allowing progress to exceed the number of pages. State the rule the object must
-preserve.
+- information it should know;
+- behavior it should provide;
+- one responsibility that should belong somewhere else.
+
+Explain one collaboration between two of your objects.
+
+## 4. Explain the four OOP principles
+
+For each principle—encapsulation, abstraction, inheritance, and polymorphism—
+provide:
+
+1. an explanation in your own words;
+2. one software example;
+3. one question you still have about it.
+
+Focus on the ideas rather than C++ syntax. The implementation details will be
+developed in later units.
+
+## 5. Collaboration and responsible tool use
+
+Explain how version control, testing, documentation, and code review help a
+team maintain software. Then write three rules for responsible use of an AI
+assistant in this course. Include why you must be able to explain every line of
+code you submit.
 
 ## Completion check
 
-You should be able to explain why an operation belongs to a class, create and
-use objects, and separate a class interface from its implementation.
+You should be able to explain why OOP is useful, distinguish programming from
+software engineering, identify objects and responsibilities in a problem
+domain, and describe the four OOP principles at an introductory level.

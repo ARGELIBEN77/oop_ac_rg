@@ -1,28 +1,30 @@
-# Unit 1 — From Procedural Programming to OOP
+# Unit 1 — Why Object-Oriented Programming?
 
-This unit introduces the transition from a procedural `struct` to a class with
-state and behavior.
+This conceptual unit explains why object-oriented programming emerged and how
+it supports the development of larger, long-lived software systems.
 
 ## Learning outcomes
 
 After completing this unit, you should be able to:
 
-- explain how a class combines state and behavior;
-- create objects and call their member functions;
-- distinguish public and private access;
-- separate a class declaration from its method implementations.
+- explain why large software systems need more than correct procedures;
+- distinguish programming from software engineering;
+- identify objects and responsibilities in a problem domain;
+- describe the four OOP principles at an introductory level;
+- explain the value of collaboration, testing, documentation, and version control.
 
 ## Main ideas
 
-- Objects as instances of a class
-- Data members and member functions
-- Public and private access
-- Separating class declarations from implementations
-
-## Related project
-
-[Song Class Fundamentals](../../Song_Class_Fundamentals/README.md)
+- Programming and software engineering
+- Limitations of growing procedural programs
+- Objects, responsibilities, and collaboration
+- Encapsulation, abstraction, inheritance, and polymorphism
+- Responsible teamwork and tool use
 
 ## Practice
 
 [Unit exercises](EXERCISES.md)
+
+Class syntax begins in Unit 2. The
+[Song Class Fundamentals](../../Song_Class_Fundamentals/README.md) project is
+best opened after that unit.
