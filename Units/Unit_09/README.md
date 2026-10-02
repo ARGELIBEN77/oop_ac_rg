@@ -8,16 +8,20 @@ exceptions.
 After completing this unit, you should be able to:
 
 - throw, catch, and handle standard exceptions;
-- define a custom exception carrying useful context;
+- catch exceptions by `const` reference and use `what()`;
+- choose between standard and domain-specific exception types;
 - trace propagation, catch selection, and stack unwinding;
-- preserve valid object state when an operation fails.
+- choose a catch location that can respond meaningfully;
+- decide when a normal return value is preferable to an exception.
 
 ## Main ideas
 
 - `throw`, `try`, and `catch`
-- Standard and custom exception classes
+- Normal and exceptional execution paths
+- Standard exceptions, `what()`, and `PlaybackError`
 - Propagation and stack unwinding
-- Exception-safe object state
+- Specific and general handlers
+- Detection, reporting, recovery, and return values
 
 ## Related project
 
