@@ -1,32 +1,34 @@
 # Unit 4 — Object Lifetime and Destructors
 
-This unit follows objects from construction through scope exit and destruction.
+This unit follows local objects from construction through scope exit and
+automatic destruction.
 
 ## Learning outcomes
 
 After completing this unit, you should be able to:
 
-- distinguish automatic and dynamic object lifetime;
-- predict construction and destruction order in nested scopes;
-- explain how composition affects lifetime;
-- use RAII so a resource is tied to an object's lifetime;
-- implement a destructor when a class directly owns a resource.
+- explain when and why a destructor runs;
+- predict construction and destruction order in nested scopes and functions;
+- explain destruction during an early return;
+- state the syntax rules for destructors;
+- trace the lifetime of member objects in composition.
 
 ## Main ideas
 
-- Automatic and dynamic object lifetime
+- Object lifetime and scope
 - Destructor syntax and responsibilities
-- Destruction order and LIFO behavior
+- Automatic execution and reverse construction order
+- Early return and multiple local objects
 - Lifetime of composed objects
-- RAII and deterministic cleanup
+- Why destructors must not be called manually
 
 ## Study resources
 
 - [Lecture](Unit_4_OOP_Destructors.pdf)
 - [Focused lifetime exercises](EXERCISES.md)
-- [Self-check solutions](../../Solutions/Unit_04/EXERCISES_SOLUTIONS.md)
 - [Song Class Fundamentals](../../Song_Class_Fundamentals/README.md)
-- [Playlist — Rule of Three and Operators](../../Playlist_Rule_of_Three_and_Operators/README.md)
 
 Predict every trace on paper before compiling it. The purpose is to learn to
 reason about lifetime, not merely to copy the program's output.
+
+Dynamic-memory ownership and the Rule of Three begin in Unit 6.

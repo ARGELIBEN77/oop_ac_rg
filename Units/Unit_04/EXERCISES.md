@@ -1,93 +1,105 @@
-# Unit 4 — Object Lifetime Exercises
+# Unit 4 — Object Lifetime and Destructors: Exercises
 
-Complete each prediction before compiling. After running the code, explain any
-difference between your prediction and the observed output.
+These exercises develop the ability to reason about when local objects are
+created and destroyed. Predict every trace before running it. After running the
+program, explain the rule behind the result instead of recording only the
+output.
 
-## 1. One scope
+## 1. Trace one scope
+
+Use this class:
 
 ```cpp
 class Marker {
-    std::string name;
+private:
+    std::string label;
+
 public:
-    explicit Marker(std::string name) : name(std::move(name)) {
-        std::cout << "construct " << this->name << '\n';
+    Marker(std::string label) {
+        this->label = label;
+        std::cout << "construct " << label << '\n';
     }
-    ~Marker() { std::cout << "destroy " << name << '\n'; }
-};
 
-int main() {
-    Marker first("first");
-    Marker second("second");
-}
+    ~Marker() {
+        std::cout << "destroy " << label << '\n';
+    }
+};
 ```
 
-Write the exact output and state the rule that determines destruction order.
+Create `Marker first("first")` and then `Marker second("second")` in `main`.
+Write the exact four output lines and explain why destruction occurs in the
+reverse of construction order.
 
-## 2. Nested scope
+## 2. Follow a nested scope
 
-Add a nested block containing `Marker inner("inner");` between the two outer
-declarations. Predict when `inner` is destroyed and explain why execution then
-continues in the outer scope.
+Add a block between the two declarations from Exercise 1. Inside the block,
+create `Marker inner("inner")`.
 
-## 3. Function lifetime
+Predict the complete trace. Mark the exact point at which `inner` is destroyed
+and explain why execution then continues in the outer scope.
 
-Write a function that creates two local `Marker` objects. Call it between two
-markers created in `main`. Trace construction and destruction across the
-function call.
+## 3. Trace a function call and an early return
 
-## 4. Composition
+Write a function that creates two local `Marker` objects. Let the function
+return early when a Boolean parameter is true. Call it once with `true` and
+once with `false`.
+
+Before running the program, predict which destructors execute on each path.
+Explain what this demonstrates about scope and early return.
+
+## 4. Check destructor rules
+
+For each declaration, state whether it is a legal destructor and explain why:
 
 ```cpp
-class Engine {
-public:
-    Engine()  { std::cout << "engine starts\n"; }
-    ~Engine() { std::cout << "engine stops\n"; }
-};
-
-class Car {
-    Engine engine;
-public:
-    Car()  { std::cout << "car ready\n"; }
-    ~Car() { std::cout << "car leaves\n"; }
-};
+~Song();
+~Song(std::string message);
+void ~Song();
+~Album();
 ```
 
-Create one `Car`. Predict the four output lines. Explain why the member is
-constructed before the `Car` constructor body and destroyed after the `Car`
-destructor body.
+State how many destructors one class may have, whether a destructor has a
+return type, and whether it accepts parameters.
 
-## 5. Automatic and dynamic lifetime
+## 5. Trace composition
 
-Create one automatic `Marker` and one with `new`. Identify the lifetime of each.
-Add the necessary `delete`, then explain what is lost if it is omitted.
+Define a `Song` class whose constructor and destructor print the song title.
+Then define an `Album` class containing two `Song` data members. Its constructor
+and destructor should also print messages.
 
-## 6. Early return
+Create one `Album` and predict the complete trace. Explain:
 
-Create a local `Marker` inside a function that returns early. Verify that the
-destructor still runs. Explain how this behavior supports reliable cleanup.
+- why both songs are constructed before the `Album` constructor body runs;
+- why the `Album` destructor body runs before its songs are destroyed;
+- why the two songs are destroyed in reverse declaration order.
 
-## 7. RAII
+## 6. Do not call a destructor manually
 
-Design a small `IntArray` class that owns a dynamically allocated array.
-Allocate in the constructor and release in the destructor. Then answer:
-
-1. Which object controls the array's lifetime?
-2. Why should client code not call `delete[]` directly?
-3. What additional operations become necessary if `IntArray` is copied?
-
-## 8. Find the lifetime error
+Consider this code:
 
 ```cpp
-Marker* makeMarker() {
-    Marker local("temporary");
-    return &local;
-}
+Song song("Imagine");
+song.~Song();
 ```
 
-Explain why the returned pointer is invalid. Rewrite the design in two safe
-ways: one returning an object by value and one returning `std::unique_ptr`.
+Explain why the explicit destructor call is dangerous when `song` will also
+reach the end of its scope. Rewrite the client code correctly.
+
+## 7. Connect lifetime to cleanup
+
+The current `Song` class owns no external resource, so its destructor may have
+nothing to release. Suppose a future class owns a file or dynamically allocated
+memory. Explain:
+
+1. why cleanup belongs in the destructor;
+2. why automatic destructor execution is safer than relying on the caller;
+3. what later course topic must be learned before implementing dynamic-memory
+   ownership correctly.
+
+This is a conceptual preview only; do not implement dynamic allocation yet.
 
 ## Completion check
 
-You are ready to continue when you can trace nested and composed objects,
-distinguish scope from allocation, and explain RAII without relying on a run.
+You should be able to predict destruction at scope exit and early return,
+state the syntax rules for destructors, and trace the lifetime of composed
+objects without relying on program output.

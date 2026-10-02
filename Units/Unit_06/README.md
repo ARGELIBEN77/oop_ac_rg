@@ -1,23 +1,28 @@
-# Unit 6 — Rule of Three and Operator Overloading
+# Unit 6 — Operator Overloading and the Rule of Three
 
-This unit combines ownership-aware copying with operators that give classes a
-natural C++ interface.
+This unit develops meaningful operators for user-defined types and introduces
+correct copying for classes that own dynamic memory.
 
 ## Learning outcomes
 
 After completing this unit, you should be able to:
 
+- design consistent comparison, arithmetic, and compound operators;
+- select member, non-member, or friend implementations;
+- implement stream operators with correct reference return types;
 - implement the destructor, copy constructor, and copy assignment operator;
 - demonstrate that a copied object owns an independent deep copy;
-- select an appropriate member or non-member operator implementation;
-- implement and test stream, comparison, subscript, and compound operators.
+- implement subscript, function-call, unary, increment, decrement, and explicit
+  conversion operators.
 
 ## Main ideas
 
-- Destructor, copy constructor, and copy assignment
-- Deep copy of dynamically allocated resources
-- Member and non-member operators
-- Stream, comparison, subscript, and compound-assignment operators
+- Meaningful and consistent operator behavior
+- Member, non-member, and friend operators
+- Comparison, stream, arithmetic, and compound assignment
+- Dynamic memory and the Rule of Three
+- Subscript and function-call operators
+- Unary, increment, decrement, and conversion operators
 
 ## Related project
 
