@@ -49,6 +49,8 @@ exercises, and tests.
 
 - [Course bibliography](REFERENCES.md)
 - [Unit 4 lifetime exercises](Units/Unit_04/EXERCISES.md)
+- [Unit 13 course integration exercises](Units/Unit_13/EXERCISES.md)
+- [Complete-course review bank](Units/Unit_13/REVIEW_QUESTION_BANK.md)
 - [Unit 13 practice strategy](Units/Unit_13/PRACTICE_STRATEGY.md)
 - [Practice examination 1](Units/Unit_13/PRACTICE_EXAM.md)
 - [Practice examination 2](Units/Unit_13/PRACTICE_EXAM_2.md)

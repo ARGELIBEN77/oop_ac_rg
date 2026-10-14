@@ -25,6 +25,11 @@ follow this cycle:
 5. Run the tests and connect each assertion to a class requirement.
 6. Complete the exercises. Re-run the tests after every small change.
 
+For Unit 13, follow the [practice strategy](Units/Unit_13/PRACTICE_STRATEGY.md):
+complete the first examination, check your work, use the
+[course integration exercises](Units/Unit_13/EXERCISES.md) and review bank for
+focused practice, then complete the second examination.
+
 ## Build a project
 
 Each project has its own `README.md` and `Makefile`. For example:

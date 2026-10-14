@@ -21,9 +21,12 @@ custom iteration, STL container selection, and shared ownership.
 1. Solve one exam under a 180-minute limit without solutions.
 2. Mark each answer as confident, uncertain, or incomplete.
 3. Compare your reasoning with the corresponding solution.
-4. Use the review bank only for concepts that caused difficulty.
-5. Correct the answer from memory the next day.
-6. Solve the second exam under the same conditions.
+4. Choose [course integration exercises](EXERCISES.md) that address difficulties
+   in testing, ownership, operator contracts, or generic programming.
+5. Use the [review bank](REVIEW_QUESTION_BANK.md) for individual concepts that
+   caused difficulty.
+6. Correct the answer from memory the next day.
+7. Solve the second exam under the same conditions.
 
 ## Final readiness check
 

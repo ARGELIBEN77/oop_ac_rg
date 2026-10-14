@@ -16,7 +16,7 @@ Each unit brings together lecture notes, practice, and related projects.
 | [10](Unit_10/README.md) | Templates and iterators | [Templates](Unit_10/Unit_10_OOP_Generic_Programming_with_Templates.pdf) · [Project](../Generic_Favorites_Linked_List/README.md) |
 | [11](Unit_11/README.md) | Smart pointers and move semantics | [Lecture](Unit_11/Unit_11_OOP_Smart_Pointers_and_Ownership.pdf) · [Implementation](../Musicians_and_Instruments_Smart_Pointers/README.md) |
 | [12](Unit_12/README.md) | Standard Template Library | [Lecture](Unit_12/Unit_12_OOP_Standard_Template_Library_.pdf) · [Project](../STL_Media_Organizer/README.md) |
-| [13](Unit_13/README.md) | Exam preparation | [Practice strategy](Unit_13/PRACTICE_STRATEGY.md) · [Review bank](Unit_13/REVIEW_QUESTION_BANK.md) |
+| [13](Unit_13/README.md) | Exam preparation | [Practice strategy](Unit_13/PRACTICE_STRATEGY.md) · [Exercises](Unit_13/EXERCISES.md) · [Review bank](Unit_13/REVIEW_QUESTION_BANK.md) |
 
 ## How to study a unit
 

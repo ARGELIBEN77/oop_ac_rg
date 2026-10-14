@@ -19,6 +19,7 @@ After completing this unit, learners should be able to:
 ## Student resources
 
 - [How to use the practice assessments](PRACTICE_STRATEGY.md)
+- [Course integration exercises](EXERCISES.md)
 - [Practice examination 1](PRACTICE_EXAM.md)
 - [Practice examination 2](PRACTICE_EXAM_2.md)
 - [Formatted sample examination](OOP_Previous_Sample_Exam.pdf)
@@ -26,5 +27,8 @@ After completing this unit, learners should be able to:
 - [Solutions for exam 1](../../Solutions/Unit_13/PRACTICE_EXAM_SOLUTIONS.md)
 - [Solutions for exam 2](../../Solutions/Unit_13/PRACTICE_EXAM_2_SOLUTIONS.md)
 
-Each practice exam samples the course differently. Complete both under timed
-conditions, then use the review bank to target concepts that need more work.
+Each practice exam samples the course differently. Complete the first under
+timed conditions, check your answers, and choose course integration exercises
+and review-bank questions that address your difficulties. The integration
+exercises focus on testing, changing requirements, and improving code.
+Then complete the second exam under timed conditions.
